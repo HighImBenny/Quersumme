@@ -1,0 +1,115 @@
+package Hausaufgaben;
+
+import java.util.Scanner;
+
+public class Folge14 {
+	
+	
+	public static void main(String args[]) {
+		
+		Scanner s = new Scanner(System.in);
+		int x = s.nextInt();
+		int y = x;
+		int a = test(x);
+		System.out.println("Die Quersumme von " + y + " ist " + a);
+
+		
+
+		
+		
+	}
+	
+	
+	public static int test(int x) {
+		int a = 1;
+		int stelle = 1;
+		int stellerechnen = 1;
+		int b = 0;
+		int ergebniss = 0;
+		boolean fuck = true;
+
+		
+		
+		
+		while(fuck) {
+			if(x/a < 10) {
+				b = x/a;
+			
+				
+				int[] zahl = new int[stelle];
+				zahl[stelle-1] = b;
+				
+				x = x-a*b;
+				a = 1;
+			
+				
+				
+				while(fuck) {
+					
+					if(x-10 < 0) {
+						
+						
+						zahl[0]=x;
+						
+						for(int i2=0; i2<stelle; i2++) {
+							int mies = ergebniss + zahl[i2];
+							ergebniss = mies;
+							
+							
+						}
+						
+						fuck = false;
+		
+					
+						
+					} else {
+						
+						if(x/a < 10) {
+							b = x/a;
+							zahl[stellerechnen-1]=b;
+							x=x-a*b;
+							stellerechnen=1;
+							a=1;
+							
+							
+							
+						} else {
+							a = a*10;
+							stellerechnen++;
+							
+						}
+						
+						
+						
+					}
+					
+					
+					
+					
+				
+				}
+					
+					
+					
+					
+					
+					
+
+					
+				
+		
+			} else {
+				a = a*10;
+				stelle ++;
+				
+				
+			}
+	}			
+		
+			
+		
+		
+		return ergebniss;
+	}
+
+}
